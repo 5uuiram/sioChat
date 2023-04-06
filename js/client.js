@@ -9,6 +9,7 @@ var numUtilisateurs = document.querySelector('#utilisateurs'); // ici, il faut s
 const listeUtilisateurs = document.getElementById("utilisateurs");
 
 
+
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // Empêche la page de se recharger
     socket.emit('emission_message', input.value);
