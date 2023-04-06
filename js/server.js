@@ -13,7 +13,7 @@ server.listen(PORT, () => {
 
 // Route vers la page d'accueil
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname,'..','index.html'));
 });
 
 // Route vers le fichier client.js
@@ -22,8 +22,8 @@ app.get('/client.js', (req, res) => {
 });
 
 // Route vers le fichier style.css
-app.get('css/style.css', (req, res) => {
-    res.sendFile(path.join(__dirname, 'style.css'));
+app.get('/css/style.css', (req, res) => {
+    res.sendFile(path.join(__dirname,'..','/css/style.css'));
 });
 
 // L'utilisateur se connecte
