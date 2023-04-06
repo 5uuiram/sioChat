@@ -13,7 +13,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault(); // Empêche la page de se recharger
     socket.emit('emission_message', input.value);
     input.value = ''; // Efface le champ de saisie
-
 });
 
 socket.on('connect', () => {
