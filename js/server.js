@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 // Route vers le fichier client.js
 app.get('/client.js', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client.js'));
+    res.sendFile(path.join(__dirname, '/client.js'));
 });
 
 // Route vers le fichier style.css

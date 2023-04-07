@@ -9,9 +9,8 @@ var numUtilisateurs = document.querySelector('#utilisateurs'); // ici, il faut s
 const listeUtilisateurs = document.getElementById("utilisateurs");
 
 
-
 form.addEventListener('submit', (e) => {
-    Default(); // Empêche la page de se recharger
+    e.preventDefault(); // Empêche la page de se recharger
     socket.emit('emission_message', input.value);
     input.value = ''; // Efface le champ de saisie
 });
