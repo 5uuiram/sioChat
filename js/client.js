@@ -35,8 +35,9 @@ socket.on('set-pseudo', (pseudo) => {
 });
 
 socket.on('reception_utilisateur', (utilisateurs) => {
-    var nbUtilisateurs = utilisateurs.length;
-    numUtilisateurs.textContent = "Il y a " + nbUtilisateurs + " utilisateur(s) connecté(s).";
+    
+    var nbUtilisateurs = document.getElementById('nb-utilisateurs');
+    nbUtilisateurs.innerText = utilisateurs.length;
 
     var userList = document.querySelector('#utilisateurs'); // ici, il faut sélectionner l'élément HTML qui a l'id "utilisateurs"
     userList.innerHTML = '';
@@ -46,6 +47,7 @@ socket.on('reception_utilisateur', (utilisateurs) => {
         li.textContent = user.pseudo_client;
         userList.appendChild(li);
     });
+    
 });
 
 socket.on('reception_message', (contenu) => {
