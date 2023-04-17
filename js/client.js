@@ -35,8 +35,9 @@ socket.on('set-pseudo', (pseudo) => {
 });
 
 socket.on('reception_utilisateur', (utilisateurs) => {
-    const nbUtilisateurs = document.getElementById('nb-utilisateurs');
-    nbUtilisateurs.innerText = utilisateurs.legth
+    var nbUtilisateurs = document.getElementById('nb-utilisateurs');
+    nbUtilisateurs.innerText = " " + utilisateurs.length;
+
 
     var userList = document.querySelector('#utilisateurs'); // ici, il faut sélectionner l'élément HTML qui a l'id "utilisateurs"
     userList.innerHTML = '';
@@ -46,6 +47,7 @@ socket.on('reception_utilisateur', (utilisateurs) => {
         li.textContent = user.pseudo_client;
         userList.appendChild(li);
     });
+
 });
 
 socket.on('reception_message', (contenu) => {
@@ -108,9 +110,3 @@ function check_unread() {
     badgeElement.style.display = (nbUnread > 0) ? 'block' : 'none';
 }
 
-const nbUsersElement = document.createElement('span');
-document.querySelector('#salon h3').appendChild(nbUsersElement);
-
-socket.on('update_users_count', (count) => {
-    nbUsersElement.innerText = ` (${count})`;
-});
