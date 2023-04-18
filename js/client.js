@@ -109,4 +109,3 @@ function check_unread() {
     badgeElement.textContent = nbUnread.toString();
     badgeElement.style.display = (nbUnread > 0) ? 'block' : 'none';
 }
-
