@@ -5,7 +5,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 const path = require("path");
-const PORT = 3138;
+const PORT = 3137;
 
 server.listen(PORT, () => {
     console.log('Serveur démarré sur le port : ' + PORT);
